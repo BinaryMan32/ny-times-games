@@ -21,11 +21,7 @@ group_indices = {letter:index
 def is_valid_word(word):
     if len(word) <= 1:
         return False
-    group = group_indices.get(word[0])
-    if group is not None:
-        return is_valid_word_internal(word[1:], group)
-    else:
-        return False
+    return is_valid_word_internal(word, None)
 
 def is_valid_word_internal(word, prev_group):
     if not word:
